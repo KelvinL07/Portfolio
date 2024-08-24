@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iot</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Internet of Things (IoT)</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#description">Description</a></li>
+                <li><a href="#technologies">Technologies</a></li>
+                <li><a href="#media">Media</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="description">
+        <h2>Project Description</h2>
+        <p>
+            The car was equipped with four motors connected to a motor driver for precise movement control. The car is outfitted with ultrasonic sensors for obstacle detection, positioned both in front and above. Additionally, a servo motor is integrated to facilitate the delivery process by pushing stock.
+These components are interfaced with an Arduino UNO board serving as the central controller. Using the Arduino IDE, the developed code is to govern the car's movements based on real-time sensor feedback. The sequence begins with the car's top ultrasonic sensor checking for obstacles within a 15 cm range above it. If an obstruction is detected, the car moves forward until it encounters an obstacle within 15 cm in front. Subsequently, it executes a left turn, advances forward again, and concludes by activating the servo motor to perform the stock delivery action. The car then transitions into sleep mode to conserve energy.
+Extensive testing procedures have been conducted to validate the car's operational behavior. This includes verifying that it moves forward, executes left turns as required, and accurately activates the servo motor when instructed. Data logging functionality ensures that all operational data is correctly recorded in a MariaDB database and displayed accurately on a web interface.
+
+        </p>   
+    </section>
+
+    <section id="technologies">
+        <h2>Technologies Used</h2>
+        
+        <h3>Sensors</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Sensor</th>
+                    <th>Purpose</th>
+                    <th>Integration</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Ultrasonic Sensor</td>
+                    <td>Initiate robot startup.</td>
+                    <td>Connected to Arduino UNO, triggers actions based on predefined thresholds.</td>
+                </tr>
+                <tr>
+                    <td>QR Code Scanner</td>
+                    <td>Measure distance to detect obstacles.</td>
+                    <td>Reads distance values and triggers actions based on predefined thresholds.</td>
+                </tr>
+            </tbody>
+        </table>
+    
+        <h3>Actuators</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Actuator</th>
+                    <th>Purpose</th>
+                    <th>Integration</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>DC Motors</td>
+                    <td>Move the robot forward, backward, and turn.</td>
+                    <td>Controlled by Arduino UNO via motor driver. Commands for movement are based on sensor inputs.</td>
+                </tr>
+                <tr>
+                    <td>Servo Motor</td>
+                    <td>Control the direction of the front wheel for turning.</td>
+                    <td>Connected to Arduino UNO. Adjusts the wheel angle based on obstacle detection.</td>
+                </tr>
+            </tbody>
+        </table>
+    
+        <h3>Software/Libraries</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Libraries</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Arduino Libraries</td>
+                    <td>
+                        - `Servo.h`: Control the servo motor.<br>
+                        - `NewPing.h`: Interface with ultrasonic sensors.
+                    </td>
+                </tr>
+                <tr>
+                    <td>Python Libraries</td>
+                    <td>
+                        - `serial`: Handle serial communication between Arduino and Raspberry Pi.<br>
+                        - `mysql.connector`: Interface with MariaDB for data storage.<br>
+                        - `flask`: Create the web dashboard.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    </section>
+
+    <style>
+        /* Center the media gallery content */
+        .media-gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px; /* Space between items */
+        }
+    
+        /* Style for images and videos */
+        .model-img, .model-video {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+    
+        /* Optional: center-align the caption text for videos */
+        .media-gallery p {
+            text-align: center;
+            font-size: 16px;
+        }
+    </style>
+
+<section id="media">
+    <h2>Project Media</h2>
+    <div class="media-gallery">
+        <img src="car_Diagram.png" alt="Screenshot 1" class="model-img">
+        
+        <video controls class="model-video">
+            <source src="SmartCar_phrase1.mp4" type="video/mp4">
+        </video>
+        <p>Phrase1</p>
+
+        <video controls class="model-video">
+            <source src="SmartCar_phrase2.mp4" type="video/mp4">
+        </video>
+        <p>Phrase2</p>
+    </div>
+</section>
+
+
+
+    <footer>
+        <p>&copy; 2024 Kelvin Lee. All rights reserved.</p>
+        <br><a href="index.html" class="home-button">Back to Home page</a>
+    </footer>
+</body>
+</html>
