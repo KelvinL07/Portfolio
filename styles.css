@@ -7,18 +7,44 @@ html {
     padding: 0;
     box-sizing: border-box;
 }
+
 .about-content {
     display: flex;
-    align-items: center;
-    gap: 2rem;
+    align-items: center; /* Centers items vertically */
+    justify-content: space-between; /* Ensures space between text and image */
+    gap: 20px; /* Adds space between text and image */
+}
+
+.about-content p {
+    text-align: justify; /* Justifies the text */
+    margin: 0;
+    max-width: 70%; /* Controls the width of the paragraph */
 }
 
 .profile-picture {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 3px solid #333;
-    object-fit: cover;
+    width: 150px; /* Sets the width of the profile picture */
+    height: 150px; /* Sets the height of the profile picture */
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image covers the area */
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column; /* Stacks the text and image on smaller screens */
+        text-align: center; /* Centers content on smaller screens */
+    }
+
+    .about-content p {
+        max-width: 100%; /* Paragraph takes full width on smaller screens */
+    }
+
+    .profile-picture {
+        margin-top: 20px; /* Adds space above the image on smaller screens */
+    }
+}
+
+.justify-text {
+    text-align: justify;
 }
 
 body {
@@ -88,6 +114,41 @@ section {
 #projects .project-item a:hover {
     transform: scale(1.05); /* Optional: Adds a slight zoom effect on hover */
     transition: transform 0.2s ease-in-out;
+}
+
+.project-gallery {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.project-item {
+    overflow: hidden; /* Ensures the image doesn't overflow the container */
+    border-radius: 10px; /* Optional: Adds rounded corners */
+    transition: transform 0.3s ease; /* Smooth transition for the entire project item */
+}
+
+.project-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease; /* Smooth transition for the image */
+}
+
+.project-item:hover img {
+    transform: scale(1.1); /* Zooms the image slightly */
+}
+
+.project-item:hover {
+    transform: translateY(-10px); /* Moves the entire project item slightly upward */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Adds a shadow to the project item */
+}
+
+.project-item p {
+    text-align: center;
+    font-size: 16px;
+    margin-top: 10px;
 }
 
 form {
@@ -173,4 +234,48 @@ th {
 
 tr:nth-child(even) {
     background-color: #f4f4f4;
+}
+
+.contact-section {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.contact-section {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.icon-link {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.icon {
+    width: 50px;  /* Set width for the icons */
+    height: 50px; /* Set height for the icons */
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+/* Hover effect to change to color icons */
+.icon-link:hover .icon {
+    width: 50px;  /* Ensure the hover icon stays the same size */
+    height: 50px;
+}
+
+/* Change specific icons on hover */
+.icon-link:hover img[src*="whatsapp2.jpg"] {
+    content: url('whatsapp1.jpg');
+}
+
+.icon-link:hover img[src*="email2.png"] {
+    content: url('email1.png');
+}
+
+.icon-link:hover img[src*="linkedin2.jpeg"] {
+    content: url('linkedin1.jpeg');
+}
+
+.icon-link:hover img[src*="github2.png"] {
+    content: url('github1.png');
 }
