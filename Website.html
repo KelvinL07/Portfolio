@@ -1,90 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programming</title>
+    <title>Software Development | Kelvin Lee</title>
+
+    <!-- Google Fonts: Archivo & Space Grotesk (Pro Max) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <header>
-        <h1>Software Development</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#description">Description</a></li>
-                <li><a href="#media">Examples</a></li>
-            </ul>
-        </nav>
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">Kelvin Lee</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <section id="description">
-        <h2>Project Description</h2>
-        <p class="justify-text"><strong>Introduction:</strong> As a recent Computer Science graduate with a strong foundation in software development, I’ve had the opportunity to work on various projects that have honed my programming skills. Over the past two years, I've gained hands-on experience in both web and mobile development, with a particular focus on creating dynamic, user-friendly applications.</p>
+    <main class="container">
+        <!-- Hero Title -->
+        <section class="section-title-wrapper"
+            style="padding-top: 150px; text-align: center; display: flex; flex-direction: column; align-items: center;">
+            <h1 class="section-title">Software Development</h1>
+            <p class="subtitle" style="text-align: center;">Web | Mobile | IoT | Database Management</p>
+        </section>
 
-    <br><h3>Core Programming Languages:</h3>
-    <p class="justify-text">I am proficient in several programming languages, including Python, HTML/CSS, PHP, Java, C++, C#, and Ruby. These languages have allowed me to tackle diverse challenges, from building robust back-end systems to designing intuitive front-end interfaces. For instance, during my diploma program, I developed a Food Ordering Web System using PHP and MySQL, which required both front-end and back-end integration to deliver a seamless user experience.</p>
+        <!-- Description -->
+        <section id="overview" class="glass-panel" style="padding: 40px; margin-bottom: 40px;">
+            <h2 style="text-align: center; margin-bottom: 30px;">Overview</h2>
+            <div class="about-text" style="max-width: 800px; margin: 0 auto;">
+                <p>As a recent Computer Science graduate with a strong foundation in software development, I’ve had the
+                    opportunity to work on various projects that have honed my programming skills. Over the past two
+                    years, I've gained hands-on experience in both web and mobile development, with a particular focus
+                    on creating dynamic, user-friendly applications.</p>
+                <p>I am committed to continuous learning and improvement. This is reflected in the various
+                    certifications I've obtained, including awards in SAS and Cisco training, as well as my consistent
+                    performance on the Dean’s Honor Roll.</p>
+            </div>
+        </section>
 
-    <br><h3>Web Development Expertise:</h3>
-    <p class="justify-text">My web development experience is extensive, particularly with HTML/CSS, PHP, and Python. I've built several websites, ensuring they are not only visually appealing but also highly functional and responsive. For example, during my internship at YouthsToday Sdn Bhd, I was responsible for designing and implementing front-end features using HTML/CSS, ensuring the interfaces were both user-friendly and aligned with UX best practices.</p>
+        <!-- Skills Grid -->
+        <section id="skills">
+            <h2 style="text-align: center;">Core Competencies</h2>
+            <div class="masonry-grid">
+                <div class="project-card project-info">
+                    <h3><i class="fas fa-code"></i> Languages</h3>
+                    <p>Proficient in diverse languages for full-stack solutions.</p>
+                    <div style="margin-top: 15px;">
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">HTML/CSS</span>
+                        <span class="project-tag">PHP</span>
+                        <span class="project-tag">Java</span>
+                        <span class="project-tag">C++</span>
+                    </div>
+                </div>
 
-    <br><h3>Experience with IoT and AI:</h3>
-    <p class="justify-text">In addition to web development, I've also worked on IoT and AI projects, which have broadened my understanding of cutting-edge technologies. My final year project involved developing a Food Image AI Recognition system, where I applied machine learning algorithms using Python. I also worked on a Smart Manufacturing IoT Project, integrating IoT devices with a centralized database to enhance automation and data processing in manufacturing processes.</p>
+                <div class="project-card project-info">
+                    <h3><i class="fas fa-laptop-code"></i> Web Dev</h3>
+                    <p>Designed responsive, user-friendly interfaces at YouthsToday Sdn Bhd using HTML/CSS. Integrated
+                        robust back-ends with PHP & MySQL.</p>
+                </div>
 
-    <br><h3>Database Management and Cybersecurity:</h3>
-    <p class="justify-text">I am skilled in database management, particularly with MySQL, which I used extensively in my projects to handle data storage and retrieval efficiently. Additionally, I have a solid understanding of cybersecurity principles, having completed training in Cisco, which complements my programming skills by ensuring the systems I develop are secure.</p>
+                <div class="project-card project-info">
+                    <h3><i class="fas fa-database"></i> Data & Security</h3>
+                    <p>Skilled in MySQL for efficient data handling. Cisco-trained in cybersecurity principles to ensure
+                        secure system architecture.</p>
+                </div>
 
-    <br><h3>Commitment to Continuous Learning:</h3>
-    <p class="justify-text">I am committed to continuous learning and improvement. This is reflected in the various certifications I've obtained, including awards in SAS and Cisco training, as well as my consistent performance on the Dean’s Honor Roll. I am eager to apply and expand my technical knowledge in a professional setting, which is why I am actively seeking an internship or entry-level position where I can contribute to innovative projects while growing as a software developer.</p>
-</section>
+                <div class="project-card project-info">
+                    <h3><i class="fas fa-wifi"></i> IoT & AI</h3>
+                    <p>Machine Learning implementation (Food AI) and centralized database integration for Smart
+                        Manufacturing IoT systems.</p>
+                </div>
+            </div>
+        </section>
 
-    <style>
-        /* Center the media gallery content */
-        .media-gallery {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px; /* Space between items */
-        }
-    
-        /* Style for images and videos */
-        .model-img, .model-video {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-        }
-    
-        /* Optional: center-align the caption text for videos */
-        .media-gallery p {
-            text-align: center;
-            font-size: 16px;
-        }
-    </style>
+        <!-- Project Examples -->
+        <section id="projects">
+            <h2 style="text-align: center;">Featured Work</h2>
+            <div class="masonry-grid">
 
-    <section id="media">
-        <h2>Project Examples</h2>
-    
-        <br><h3>Food Image AI Recognition System</h3>
-        <p><strong>Technologies Used:</strong> Python, Machine Learning, HTML, Google Drive for data storage.</p>
-        <p><strong>Integration:</strong> The AI model was trained using a diverse dataset, integrated with a user-friendly web application built using Python frameworks.</p>
-    
-        <br><h3>Smart Manufacturing IoT Project</h3>
-        <p><strong>Technologies Used:</strong> IoT devices, MySQL, Arduino.</p>
-        <p><strong>Integration:</strong> Enabled automation in manufacturing processes by integrating IoT sensors with a centralized database for real-time data processing.</p>
-    
-        <br><h3>Smart Delivery Car Project</h3>
-        <p><strong>Technologies Used:</strong> Arduino, Servo Motors, Ultrasonic Sensors.</p>
-        <p><strong>Integration:</strong> Developed a prototype that automates delivery tasks by sensing obstacles and adjusting the car’s path accordingly.</p>
+                <div class="project-card project-info"
+                    style="display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h3>Food Image AI</h3>
+                        <p>A Python-based AI recognition system using robust datasets and Google Drive integration.</p>
+                    </div>
+                    <span class="project-tag">ML / Python</span>
+                </div>
 
-        <br><a href="https://github.com/KelvinL07">Let view on GitHub</a>
-    </section>
-    
+                <div class="project-card project-info"
+                    style="display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h3>Smart Manufacturing</h3>
+                        <p>IoT sensor integration with centralized MySQL databases for real-time processing.</p>
+                    </div>
+                    <span class="project-tag">IoT / MySQL</span>
+                </div>
 
+                <div class="project-card project-info"
+                    style="display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h3>Smart Delivery Car</h3>
+                        <p>Autonomous delivery prototype using Arduino, Servo Motors, and Ultrasonic Sensors.</p>
+                    </div>
+                    <span class="project-tag">Arduino / Robotics</span>
+                </div>
 
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="https://github.com/KelvinL07" target="_blank" class="btn btn-primary">
+                    <i class="fab fa-github"></i> View more on GitHub
+                </a>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2024 Kelvin Lee. All rights reserved.</p>
-        <br><a href="index.html" class="home-button">Back to Home page</a>
+        <div class="container">
+            <p>&copy; 2024 Kelvin Lee. All rights reserved.</p>
+            <div style="margin-top: 20px;">
+                <a href="index.html" class="btn btn-secondary">Back to Home</a>
+            </div>
+        </div>
     </footer>
 </body>
+
 </html>

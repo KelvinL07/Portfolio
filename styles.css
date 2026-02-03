@@ -1,281 +1,489 @@
-html {
-    scroll-behavior: smooth;
+/* =========================================
+   1. VARIABLES & RESET
+   ========================================= */
+:root {
+    /* Colors - Zinc Dark Mode (Monochrome + Blue Accent) */
+    --bg-primary: #09090b;
+    /* Zinc 950 */
+    --bg-secondary: #18181b;
+    /* Zinc 900 */
+    --text-primary: #fafafa;
+    /* Zinc 50 */
+    --text-secondary: #a1a1aa;
+    /* Zinc 400 */
+    --accent-primary: #2563eb;
+    /* Blue 600 */
+    --accent-glow: rgba(37, 99, 235, 0.5);
+    /* Blue 600 with opacity */
+
+    /* Glassmorphism Tokens */
+    --glass-bg: rgba(24, 24, 27, 0.6);
+    /* Zinc 900 @ 60% */
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-blur: 16px;
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
+
+    /* Spacing */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 32px;
+    --space-xl: 64px;
+    --container-width: 1280px;
+
+    /* Typography */
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'Archivo', sans-serif;
+
+    /* Animation */
+    --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --transition-fast: all 0.2s ease;
+    --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-* {
+/* Reset */
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* Smooth Scroll behavior is handled via html */
 }
 
-.about-content {
-    display: flex;
-    align-items: center; /* Centers items vertically */
-    justify-content: space-between; /* Ensures space between text and image */
-    gap: 20px; /* Adds space between text and image */
-}
-
-.about-content p {
-    text-align: justify; /* Justifies the text */
-    margin: 0;
-    max-width: 70%; /* Controls the width of the paragraph */
-}
-
-.profile-picture {
-    width: 150px; /* Sets the width of the profile picture */
-    height: 150px; /* Sets the height of the profile picture */
-    border-radius: 50%; /* Makes the image circular */
-    object-fit: cover; /* Ensures the image covers the area */
-}
-
-@media (max-width: 768px) {
-    .about-content {
-        flex-direction: column; /* Stacks the text and image on smaller screens */
-        text-align: center; /* Centers content on smaller screens */
-    }
-
-    .about-content p {
-        max-width: 100%; /* Paragraph takes full width on smaller screens */
-    }
-
-    .profile-picture {
-        margin-top: 20px; /* Adds space above the image on smaller screens */
-    }
-}
-
-.justify-text {
-    text-align: justify;
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
 }
 
 body {
-    font-family: Arial, sans-serif;
+    background-color: var(--bg-primary);
+    background-image:
+        radial-gradient(circle at 15% 50%, rgba(37, 99, 235, 0.08), transparent 25%),
+        radial-gradient(circle at 85% 30%, rgba(37, 99, 235, 0.08), transparent 25%);
+    color: var(--text-primary);
+    font-family: var(--font-body);
     line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
 }
 
-header {
-    text-align: center;
-    padding: 2rem;
-    background-color: #333;
-    color: #fff;
+/* =========================================
+   2. TYPOGRAPHY
+   ========================================= */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
 }
 
-nav {
-    background-color: #444;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-}
-
-nav ul li {
-    margin: 0 1rem;
-}
-
-nav ul li a {
-    color: #fff;
+a {
     text-decoration: none;
-    font-weight: bold;
+    color: inherit;
+    cursor: pointer;
+    transition: var(--transition-base);
+}
+
+p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+}
+
+.section-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: var(--space-xl);
+    text-align: center;
+    background: linear-gradient(to right, #fff, #a1a1aa);
+    /* Gradient Text */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    width: 100%;
+    position: relative;
+}
+
+/* =========================================
+   3. LAYOUT UTILITIES
+   ========================================= */
+.container {
+    width: 90%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--space-md);
 }
 
 section {
-    padding: 2rem;
-    margin: 2rem 0;
-    max-width: 1200px; /* Set a max-width to keep content centered */
-    margin-left: auto;
-    margin-right: auto; /* Center the sections */
+    padding: var(--space-xl) 0;
+    position: relative;
 }
 
-#projects .project-gallery {
+/* Masonry Grid Attempt using CSS Grid */
+.masonry-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--space-lg);
+    align-items: start;
+}
+
+/* =========================================
+   4. GLASSMORPHISM COMPONENTS
+   ========================================= */
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    box-shadow: var(--glass-shadow);
+}
+
+/* =========================================
+   5. HEADER & NAV (Floating Glass)
+   ========================================= */
+.site-header {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    width: 90%;
+    max-width: 1000px;
+}
+
+.header-container {
+    padding: 12px 32px;
+    border-radius: 50px;
+    background: rgba(9, 9, 11, 0.7);
+    /* Darker glass for nav */
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
     display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
 }
 
-#projects .project-item {
-    flex: 1 1 200px;
-    text-align: center;
+.logo {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.25rem;
+    letter-spacing: -0.03em;
 }
 
-#projects .project-item img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-}
-
-#projects .project-item a {
-    text-decoration: none; /* Removes underline */
-    color: inherit; /* Inherits the color of the text */
-}
-
-#projects .project-item a:hover {
-    transform: scale(1.05); /* Optional: Adds a slight zoom effect on hover */
-    transition: transform 0.2s ease-in-out;
-}
-
-.project-gallery {
+.nav-links {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 20px;
+    gap: 32px;
+    list-style: none;
 }
 
-.project-item {
-    overflow: hidden; /* Ensures the image doesn't overflow the container */
-    border-radius: 10px; /* Optional: Adds rounded corners */
-    transition: transform 0.3s ease; /* Smooth transition for the entire project item */
+.nav-links a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    position: relative;
 }
 
-.project-item img {
-    display: block;
+.nav-links a:hover {
+    color: var(--text-primary);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent-primary);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
     width: 100%;
-    height: auto;
-    transition: transform 0.3s ease; /* Smooth transition for the image */
 }
 
-.project-item:hover img {
-    transform: scale(1.1); /* Zooms the image slightly */
-}
-
-.project-item:hover {
-    transform: translateY(-10px); /* Moves the entire project item slightly upward */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Adds a shadow to the project item */
-}
-
-.project-item p {
+/* =========================================
+   6. HERO SECTION
+   ========================================= */
+#hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    font-size: 16px;
-    margin-top: 10px;
+    padding-top: 100px;
+    /* Offset for fixed header */
 }
 
-form {
+/* Blur orb behind hero */
+#hero::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+    filter: blur(80px);
+    z-index: -1;
+    opacity: 0.4;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#hero h1 {
+    font-size: clamp(3rem, 8vw, 6rem);
+    line-height: 1;
+    margin-bottom: var(--space-md);
+    background: linear-gradient(180deg, #fff 0%, #a1a1aa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#hero .subtitle {
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
     max-width: 600px;
-    margin: 0 auto;
+    margin: 0 auto var(--space-xl);
+    color: var(--text-secondary);
 }
 
-form label {
-    display: block;
-    margin-bottom: 0.5rem;
-}
-
-form input, form textarea {
-    width: 100%;
-    padding: 0.5rem;
-    margin-bottom: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-form button {
-    padding: 0.5rem 2rem;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 36px;
+    border-radius: 100px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: var(--transition-base);
+    letter-spacing: 0.02em;
     cursor: pointer;
 }
 
-form button:hover {
-    background-color: #555;
+.btn-primary {
+    background: var(--accent-primary);
+    color: white;
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
+    border: 1px solid transparent;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 40px rgba(37, 99, 235, 0.6);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--glass-border);
+    margin-left: var(--space-md);
+}
+
+.btn-secondary:hover {
+    border-color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* =========================================
+   7. ABOUT SECTION (Split Layout)
+   ========================================= */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+    align-items: center;
+}
+
+.about-text {
+    font-size: 1.125rem;
+}
+
+.profile-picture {
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 24px;
+    box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.5), -20px -20px 60px rgba(255, 255, 255, 0.02);
+    transition: transform 0.5s var(--ease-out-back);
+}
+
+.profile-picture:hover {
+    transform: scale(1.02) rotate(-1deg);
+}
+
+/* =========================================
+   8. PROJECTS SECTION (Masonry / Cards)
+   ========================================= */
+.project-card {
+    background: rgba(24, 24, 27, 0.4);
+    /* Slightly unrelated to glass-panel for variety */
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: var(--transition-base);
+    position: relative;
+    group: hover;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-primary);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.project-image {
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+}
+
+.project-info {
+    padding: 24px;
+}
+
+.project-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+}
+
+.project-tag {
+    display: inline-block;
+    padding: 6px 14px;
+    background: rgba(37, 99, 235, 0.15);
+    color: #60a5fa;
+    /* Lighter blue for text */
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-top: 12px;
+}
+
+/* =========================================
+   9. RESUME CTA
+   ========================================= */
+.cta-section {
+    text-align: center;
+    background: linear-gradient(180deg, transparent 0%, rgba(37, 99, 235, 0.05) 100%);
+    border-top: 1px solid var(--glass-border);
+}
+
+.cta-section h2 {
+    font-size: 3rem;
+    margin-bottom: var(--space-md);
+}
+
+/* =========================================
+   10. FOOTER & CONTACT
+   ========================================= */
+.social-links {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.social-links a {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    background: rgba(255, 255, 255, 0.03);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid var(--glass-border);
+    transition: var(--transition-base);
+}
+
+.social-links a:hover {
+    background: var(--text-primary);
+    color: var(--bg-primary);
+    transform: scale(1.1);
 }
 
 footer {
+    padding: 40px 0;
     text-align: center;
-    padding: 1rem;
-    background-color: #333;
-    color: #fff;
+    border-top: 1px solid var(--glass-border);
+    color: var(--text-secondary);
+    font-size: 0.875rem;
 }
 
-.home-button {
-    display: inline-block;
-    padding: 10px 20px;
-    margin-top: 10px;
-    background-color: #333; /* Button background color */
-    color: #fff; /* Text color */
-    text-align: center;
-    text-decoration: none;
-    border-radius: 5px; /* Rounded corners */
-    font-size: 16px; /* Font size */
-    font-weight: bold; /* Bold text */
-    transition: background-color 0.3s ease; /* Smooth transition */
+/* =========================================
+   11. RESPONSIVENESS
+   ========================================= */
+@media (max-width: 768px) {
+    .site-header {
+        top: 0;
+        width: 100%;
+        border-radius: 0;
+        background: rgba(9, 9, 11, 0.95);
+    }
+
+    .header-container {
+        border: none;
+        border-bottom: 1px solid var(--glass-border);
+        border-radius: 0;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-image {
+        order: -1;
+    }
+
+    #hero h1 {
+        font-size: 3rem;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+    }
 }
 
-.home-button:hover {
-    background-color: #555; /* Background color on hover */
+/* =========================================
+   12. ACCESSIBILITY
+   ========================================= */
+:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 4px;
+    border-radius: 4px;
 }
 
+/* Prefer Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
 
-.project-media-container {
-    padding: 20px;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-}
-
-table, th, td {
-    border: 1px solid #ddd;
-}
-
-th, td {
-    padding: 10px;
-    text-align: left;
-}
-
-th {
-    background-color: #333;
-    color: white;
-}
-
-tr:nth-child(even) {
-    background-color: #f4f4f4;
-}
-
-.contact-section {
-    text-align: center;
-    margin: 20px 0;
-}
-
-.contact-section {
-    text-align: center;
-    margin: 20px 0;
-}
-
-.icon-link {
-    display: inline-block;
-    margin: 0 15px;
-}
-
-.icon {
-    width: 50px;  /* Set width for the icons */
-    height: 50px; /* Set height for the icons */
-    transition: all 0.3s ease; /* Smooth transition */
-}
-
-/* Hover effect to change to color icons */
-.icon-link:hover .icon {
-    width: 50px;  /* Ensure the hover icon stays the same size */
-    height: 50px;
-}
-
-/* Change specific icons on hover */
-.icon-link:hover img[src*="whatsapp2.jpg"] {
-    content: url('whatsapp1.jpg');
-}
-
-.icon-link:hover img[src*="email2.png"] {
-    content: url('email1.png');
-}
-
-.icon-link:hover img[src*="linkedin2.jpeg"] {
-    content: url('linkedin1.jpeg');
-}
-
-.icon-link:hover img[src*="github2.png"] {
-    content: url('github1.png');
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }

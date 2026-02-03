@@ -1,104 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kelvin Lee Yi Xiang's portfolio showcasing projects in IoT, AI, and web development.">
+    <meta name="description"
+        content="Kelvin Lee Yi Xiang's portfolio showcasing projects in IoT, AI, and web development.">
     <meta name="keywords" content="Kelvin Lee Yi Xiang, portfolio, IoT, AI, web development, software engineer">
+    <title>Kelvin Lee | Portfolio</title>
 
-    <title>My Portfolio</title>
+    <!-- Google Fonts: Archivo & Space Grotesk (Pro Max) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <header>
-        <h1>Kelvin Lee Yi Xiang</h1>
-        <p>Aspiring Software Engineer | IoT | AI | Web Development</p>
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="#" class="logo">Kelvin Lee</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#resume">Resume</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#resume">Resume</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <section id="about">
-        <h2>About Me</h2>
-        <div class="about-content">
-        <p>Welcome to my portfolio! I am a Computer Science student, born on February 9th, 2001, with a deep passion for IoT, AI, and web development. I am currently pursuing my studies at INTI International College Subang, where I completed my Diploma in Computer Science and am now advancing into a Bachelor's degree in Computer Science, majoring in Software Development, in partnership with Swinburne University, Australia.
-
-            I chose this field because it is not only a global trend but also an exciting and challenging domain that captivates me. Through my knowledge and dedication, I aspire to contribute to shaping the future, helping to elevate our world to new heights.</p> 
-        <img src="profile.jpg" alt="Kelvin Lee" class="profile-picture"></div>
-    </section>
-
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project-gallery">
-            <div class="project-item">
-                <a href="CraveAI.html">
-                <img src="CraveAI.gif" alt="CraveAI">
-                <p>AI Based Project</p></a>
+    <main>
+        <section id="hero">
+            <div class="container hero-content">
+                <h1>Kelvin Lee Yi Xiang</h1>
+                <p class="subtitle">Aspiring Software Engineer | IoT | AI | Web Development</p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                </div>
             </div>
-            <div class="project-item">
-                <a href="iot.html">
-                <img src="SmartCar.png" alt="Smart Car">
-                <p>IoT Project</p></a>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p>Welcome to my portfolio! I am a Computer Science student, born on February 9th, 2001, with a
+                            deep passion for IoT, AI, and web development.</p>
+                        <p>I am currently pursuing my studies at INTI International College Subang, where I completed my
+                            Diploma in Computer Science and am now advancing into a Bachelor's degree in Computer
+                            Science, majoring in Software Development, in partnership with Swinburne University,
+                            Australia.</p>
+                        <p>I chose this field because it is not only a global trend but also an exciting and challenging
+                            domain that captivates me. Through my knowledge and dedication, I aspire to contribute to
+                            shaping the future, helping to elevate our world to new heights.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="profile.jpg" alt="Kelvin Lee Portrait" class="profile-picture">
+                    </div>
+                </div>
             </div>
-            <div class="project-item">
-                <a href="Website.html">
-                <img src="Website.png" alt="Website">
-                <p>Programming Project</p></a>
+        </section>
+
+        <section id="projects">
+            <div class="container">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="project-gallery">
+                    <article class="project-card">
+                        <a href="CraveAI.html" class="project-link" aria-label="View CraveAI Project">
+                            <div class="project-image">
+                                <img src="CraveAI.gif" alt="CraveAI Interface Demo">
+                            </div>
+                            <div class="project-info">
+                                <h3>CraveAI</h3>
+                                <p>AI Based Project</p>
+                                <span class="project-tag">AI</span>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="project-card">
+                        <a href="iot.html" class="project-link" aria-label="View Smart Car Project">
+                            <div class="project-image">
+                                <img src="SmartCar.png" alt="Smart Car Prototype">
+                            </div>
+                            <div class="project-info">
+                                <h3>Smart Car</h3>
+                                <p>IoT Project</p>
+                                <span class="project-tag">IoT</span>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="project-card">
+                        <a href="Website.html" class="project-link" aria-label="View Programming Website Project">
+                            <div class="project-image">
+                                <img src="Website.png" alt="Website Screenshot">
+                            </div>
+                            <div class="project-info">
+                                <h3>Personal Website</h3>
+                                <p>Programming Project</p>
+                                <span class="project-tag">Web Dev</span>
+                            </div>
+                        </a>
+                    </article>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="resume">
-        <h2><a href="resume.pdf" download>Download Resume</a></h2>
-    </section>
+        <section id="resume" class="cta-section">
+            <div class="container">
+                <h2>Ready to know more?</h2>
+                <p>Check out my detailed resume to see my full history and skills.</p>
+                <a href="kelvin-lee-resume.pdf" class="btn btn-primary" download>
+                    <i class="fas fa-download"></i> Download Resume
+                </a>
+            </div>
+        </section>
 
-    <style>
-        .contact-section {
-            text-align: center;
-            margin: 20px 0; 
-        }
-    
-        .contact-section a {
-            margin: 0 10px; 
-            text-decoration: none; 
-            color: #333; 
-            font-weight: bold; 
-        }
-    
-        .contact-section a:hover {
-            color: #555; 
-        }
-    </style>
-    
-
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <div class="contact-section">
-            <a href="https://wa.me/60173197234" target="_blank" class="icon-link">
-                <img src="whatsapp2.jpg" alt="WhatsApp" class="icon">
-                <!-- Non-color icon (default) -->
-            </a>
-            <a href="mailto:kelvinleeyixiang@gmail.com" class="icon-link">
-                <img src="email2.png" alt="Email" class="icon">
-            </a>
-            <a href="https://www.linkedin.com/in/yixiang-kelvinlee-b75418283" target="_blank" class="icon-link">
-                <img src="linkedin2.jpeg" alt="LinkedIn" class="icon">
-            </a>
-            <a href="https://github.com/KelvinL07" target="_blank" class="icon-link">
-                <img src="github2.png" alt="GitHub" class="icon">
-            </a>
-        </div>
-    </section>
-    
+        <section id="contact">
+            <div class="container">
+                <h2 class="section-title">Contact Me</h2>
+                <div class="social-links">
+                    <a href="https://wa.me/60173197234" target="_blank" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="mailto:kelvinleeyixiang@gmail.com" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/yixiang-kelvinlee-b75418283" target="_blank"
+                        aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/KelvinL07" target="_blank" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2024 Kelvin Lee. All rights reserved.</p>
+        <div class="container">
+            <p>&copy; 2024 Kelvin Lee. All rights reserved.</p>
+        </div>
     </footer>
 </body>
+
 </html>

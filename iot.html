@@ -1,158 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iot</title>
+    <title>IoT Project | Kelvin Lee</title>
+
+    <!-- Google Fonts: Archivo & Space Grotesk (Pro Max) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <header>
-        <h1>Internet of Things (IoT)</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#description">Description</a></li>
-                <li><a href="#technologies">Technologies</a></li>
-                <li><a href="#media">Media</a></li>
-            </ul>
-        </nav>
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">Kelvin Lee</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#description">Description</a></li>
+                    <li><a href="#technologies">Technologies</a></li>
+                    <li><a href="#media">Media</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <section id="description">
-        <h2>Project Description</h2>
-        <p class="justify-text">
-            The car was equipped with four motors connected to a motor driver for precise movement control. The car is outfitted with ultrasonic sensors for obstacle detection, positioned both in front and above. Additionally, a servo motor is integrated to facilitate the delivery process by pushing stock.
-These components are interfaced with an Arduino UNO board serving as the central controller. Using the Arduino IDE, the developed code is to govern the car's movements based on real-time sensor feedback. The sequence begins with the car's top ultrasonic sensor checking for obstacles within a 15 cm range above it. If an obstruction is detected, the car moves forward until it encounters an obstacle within 15 cm in front. Subsequently, it executes a left turn, advances forward again, and concludes by activating the servo motor to perform the stock delivery action. The car then transitions into sleep mode to conserve energy.
-Extensive testing procedures have been conducted to validate the car's operational behavior. This includes verifying that it moves forward, executes left turns as required, and accurately activates the servo motor when instructed. Data logging functionality ensures that all operational data is correctly recorded in a MariaDB database and displayed accurately on a web interface.
+    <main class="container">
+        <!-- Hero Title -->
+        <section class="section-title-wrapper"
+            style="padding-top: 150px; text-align: center; display: flex; flex-direction: column; align-items: center;">
+            <h1 class="section-title">Internet of Things (IoT)</h1>
+            <p class="subtitle" style="text-align: center;">Smart Car Automation & Delivery System</p>
+        </section>
 
-        </p>   
-    </section>
+        <!-- Description -->
+        <section id="description" class="glass-panel" style="padding: 40px; margin-bottom: 40px;">
+            <h2 style="text-align: center; margin-bottom: 30px;">Project Description</h2>
+            <div class="about-text" style="max-width: 800px; margin: 0 auto;">
+                <p>
+                    The car was equipped with four motors connected to a motor driver for precise movement control. The
+                    car is outfitted with ultrasonic sensors for obstacle detection, positioned both in front and above.
+                    Additionally, a servo motor is integrated to facilitate the delivery process by pushing stock.
+                </p>
+                <p>
+                    These components are interfaced with an Arduino UNO board serving as the central controller. Using
+                    the Arduino IDE, the developed code is to govern the car's movements based on real-time sensor
+                    feedback. The sequence begins with the car's top ultrasonic sensor checking for obstacles within a
+                    15 cm range above it. If an obstruction is detected, the car moves forward until it encounters an
+                    obstacle within 15 cm in front. Subsequently, it executes a left turn, advances forward again, and
+                    concludes by activating the servo motor to perform the stock delivery action. The car then
+                    transitions into sleep mode to conserve energy.
+                </p>
+                <p>
+                    Extensive testing procedures have been conducted to validate the car's operational behavior. This
+                    includes verifying that it moves forward, executes left turns as required, and accurately activates
+                    the servo motor when instructed. Data logging functionality ensures that all operational data is
+                    correctly recorded in a MariaDB database and displayed accurately on a web interface.
+                </p>
+            </div>
+        </section>
 
-    <section id="technologies">
-        <h2>Technologies Used</h2>
-        
-        <h3>Sensors</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>Sensor</th>
-                    <th>Purpose</th>
-                    <th>Integration</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Ultrasonic Sensor</td>
-                    <td>Initiate robot startup.</td>
-                    <td>Connected to Arduino UNO, triggers actions based on predefined thresholds.</td>
-                </tr>
-                <tr>
-                    <td>QR Code Scanner</td>
-                    <td>Measure distance to detect obstacles.</td>
-                    <td>Reads distance values and triggers actions based on predefined thresholds.</td>
-                </tr>
-            </tbody>
-        </table>
-    
-        <h3>Actuators</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>Actuator</th>
-                    <th>Purpose</th>
-                    <th>Integration</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>DC Motors</td>
-                    <td>Move the robot forward, backward, and turn.</td>
-                    <td>Controlled by Arduino UNO via motor driver. Commands for movement are based on sensor inputs.</td>
-                </tr>
-                <tr>
-                    <td>Servo Motor</td>
-                    <td>Control the direction of the front wheel for turning.</td>
-                    <td>Connected to Arduino UNO. Adjusts the wheel angle based on obstacle detection.</td>
-                </tr>
-            </tbody>
-        </table>
-    
-        <h3>Software/Libraries</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>Category</th>
-                    <th>Libraries</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Arduino Libraries</td>
-                    <td>
-                        - `Servo.h`: Control the servo motor.<br>
-                        - `NewPing.h`: Interface with ultrasonic sensors.
-                    </td>
-                </tr>
-                <tr>
-                    <td>Python Libraries</td>
-                    <td>
-                        - `serial`: Handle serial communication between Arduino and Raspberry Pi.<br>
-                        - `mysql.connector`: Interface with MariaDB for data storage.<br>
-                        - `flask`: Create the web dashboard.
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
+        <!-- Technologies -->
+        <section id="technologies">
+            <h2 style="text-align: center;">Technologies Used</h2>
 
-    </section>
+            <div class="masonry-grid">
+                <!-- Sensors Card -->
+                <div class="project-card project-info">
+                    <h3><i class="fas fa-microchip"></i> Sensors</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 15px;">
+                            <strong>Ultrasonic Sensor</strong><br>
+                            <span style="color: var(--text-secondary); font-size: 0.9rem;">Initiate robot startup via
+                                Arduino UNO triggers.</span>
+                        </li>
+                        <li>
+                            <strong>QR Code Scanner</strong><br>
+                            <span style="color: var(--text-secondary); font-size: 0.9rem;">Measures distance to detect
+                                obstacles.</span>
+                        </li>
+                    </ul>
+                </div>
 
-    <style>
-        /* Center the media gallery content */
-        .media-gallery {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px; /* Space between items */
-        }
-    
-        /* Style for images and videos */
-        .model-img, .model-video {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-        }
-    
-        /* Optional: center-align the caption text for videos */
-        .media-gallery p {
-            text-align: center;
-            font-size: 16px;
-        }
-    </style>
+                <!-- Actuators Card -->
+                <div class="project-card project-info">
+                    <h3><i class="fas fa-cogs"></i> Actuators</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 15px;">
+                            <strong>DC Motors</strong><br>
+                            <span style="color: var(--text-secondary); font-size: 0.9rem;">Full movement control
+                                (forward, backward, turn).</span>
+                        </li>
+                        <li>
+                            <strong>Servo Motor</strong><br>
+                            <span style="color: var(--text-secondary); font-size: 0.9rem;">Steering control for front
+                                wheel direction.</span>
+                        </li>
+                    </ul>
+                </div>
 
-<section id="media">
-    <h2>Project Media</h2>
-    <div class="media-gallery">
-        <img src="car_Diagram.png" alt="Screenshot 1" class="model-img">
-        
-        <video controls class="model-video">
-            <source src="SmartCar_phrase1.mp4" type="video/mp4">
-        </video>
-        <p>Phrase1</p>
+                <!-- Software Card -->
+                <div class="project-card project-info">
+                    <h3><i class="fas fa-code"></i> Software</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 15px;">
+                            <strong>Arduino</strong><br>
+                            <span class="project-tag">Servo.h</span> <span class="project-tag">NewPing.h</span>
+                        </li>
+                        <li>
+                            <strong>Python Stack</strong><br>
+                            <span class="project-tag">serial</span> <span class="project-tag">mysql.connector</span>
+                            <span class="project-tag">flask</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-        <video controls class="model-video">
-            <source src="SmartCar_phrase2.mp4" type="video/mp4">
-        </video>
-        <p>Phrase2</p>
-    </div>
-</section>
+        <!-- Media -->
+        <section id="media" style="text-align: center;">
+            <h2>Project Media</h2>
+            <div class="glass-panel" style="padding: 30px; display: inline-block; width: 100%; max-width: 900px;">
+                <img src="car_Diagram.png" alt="Smart Car Diagram"
+                    style="max-width: 100%; border-radius: 12px; margin-bottom: 30px;">
 
-
+                <div class="masonry-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+                    <div class="project-card" style="padding: 10px;">
+                        <video controls style="width: 100%; border-radius: 8px;">
+                            <source src="SmartCar_phrase1.mp4" type="video/mp4">
+                        </video>
+                        <p style="margin-top: 10px; margin-bottom: 0;">Phase 1 Demo</p>
+                    </div>
+                    <div class="project-card" style="padding: 10px;">
+                        <video controls style="width: 100%; border-radius: 8px;">
+                            <source src="SmartCar_phrase2.mp4" type="video/mp4">
+                        </video>
+                        <p style="margin-top: 10px; margin-bottom: 0;">Phase 2 Demo</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2024 Kelvin Lee. All rights reserved.</p>
-        <br><a href="index.html" class="home-button">Back to Home page</a>
+        <div class="container">
+            <p>&copy; 2024 Kelvin Lee. All rights reserved.</p>
+            <div style="margin-top: 20px;">
+                <a href="index.html" class="btn btn-secondary">Back to Home</a>
+            </div>
+        </div>
     </footer>
 </body>
+
 </html>

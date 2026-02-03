@@ -1,80 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CraveAI</title>
+    <title>CraveAI | Kelvin Lee</title>
+
+    <!-- Google Fonts: Archivo & Space Grotesk (Pro Max) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <header>
-        <h1>CraveAI</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#description">Description</a></li>
-                <li><a href="#technologies">Technologies</a></li>
-                <li><a href="#media">Media</a></li>
-                <li><a href="#demo">Demo</a></li>
-            </ul>
-        </nav>
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">Kelvin Lee</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#description">Description</a></li>
+                    <li><a href="#technologies">Stack</a></li>
+                    <li><a href="#media">Screenshots</a></li>
+                    <li><a href="#demo">Demo</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <section id="description">
-        <h2>Project Description</h2>
-        <p class="justify-text">The Crave project encompasses several key components aimed at delivering a comprehensive AI-driven food recognition and recommendation system.</p>
-            
-        <p class="justify-text"><br>Firstly, the project will develop an AI Image Recognition model capable of accurately identifying and categorizing food images into specific categories and cuisines. This involves creating a robust deep learning model, trained on a diverse dataset of food images to ensure high accuracy and reliability. The model will be designed to recognize various types of foods, ranging from common everyday meals to exotic dishes, and classify them into predefined categories and cuisines. To manage the storage of food images, the project will utilize Google Drive. This choice leverages Google Drive's robust cloud storage capabilities, allowing easy access, sharing, and management of the images required for training and testing the AI model. By storing images in Google Drive, the project ensures scalability and accessibility, facilitating efficient collaboration among team members and contributors.</p>
-    
-        <p class="justify-text"><br>Additionally, the project will focus on enhancing the user experience by developing a user-friendly web application using Streamlit. This web application will serve as the front-end interface where users can upload images of food items and receive instant, accurate predictions from the AI model. The application will be designed to be intuitive and visually appealing, ensuring that users can easily navigate and utilize its features without any technical difficulties. The scope of the project also includes the implementation of a taste-based recommendation system. This system will analyze user preferences and suggest food items based on their taste profiles. By incorporating user inputs and preferences, the application will provide personalized food recommendations that cater to individual tastes and dietary needs. To ensure seamless integration and usability, the project will incorporate various supporting components such as a database management system (DBMS) for storing and retrieving user data, a secure and scalable cloud infrastructure for hosting the application, and real-time processing capabilities to deliver fast and responsive predictions.</p>
-        
-        <p class="justify-text"><br>Furthermore, the project will involve extensive testing and validation phases to ensure the accuracy and performance of the AI model and the overall application. This includes unit testing, integration testing, user acceptance testing, and performance testing to identify and resolve any issues before deployment. An important aspect of the Crave project is its open-source contribution. By making the project open-source, we encourage collaboration and contributions from developers worldwide. This open-source approach not only fosters innovation and continuous improvement but also helps in creating a community around the project where ideas and enhancements can be shared and implemented collectively. All source code, documentation, and relevant materials will be made available on a public repository, such as GitHub, ensuring transparency and accessibility. The project will also include internationalization and localization efforts to expand the application’s reach to non-English-speaking countries. This involves translating the user interface and content into multiple languages and adapting the application to meet the cultural and linguistic needs of diverse global users.</p>
-    
-        <p class="justify-text"><br>In summary, the Crave project aims to create a comprehensive AI-driven food recognition and recommendation system that not only identifies and categorizes food items with high accuracy but also provides a seamless and personalized user experience through a user-friendly web application. The project’s scope covers all aspects of development, from model training and application design to testing, deployment, and global accessibility, leveraging Google Drive for image storage and promoting open-source collaboration.</p>
-    </section>    
+    <main class="container">
+        <!-- Hero Title -->
+        <section class="section-title-wrapper"
+            style="padding-top: 150px; text-align: center; display: flex; flex-direction: column; align-items: center;">
+            <h1 class="section-title">CraveAI</h1>
+            <p class="subtitle" style="text-align: center;">AI-Driven Food Recognition & Recommendation System</p>
+            <div style="margin-top: 30px;">
+                <a href="https://sutcrave.streamlit.app/" target="_blank" class="btn btn-primary">
+                    <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+            </div>
+        </section>
 
-    <section id="technologies">
-        <h2>Technologies Used</h2>
-        <ul>
-            <li>streamlit</li>
-            <li>TensorFlow</li>
-            <li>numpy</li>
-            <li>matplotlib</li>
-            <li>requests</li>
-            <li>opencv-python-headless</li>
-            <li>Pillow</li>
-            <li>pandas</li>
-            <li>Google Drive</li>
-            <li>Google Colab</li>
-        </ul>
+        <!-- Description -->
+        <section id="description" class="glass-panel" style="padding: 40px; margin-bottom: 40px;">
+            <h2 style="text-align: center; margin-bottom: 30px;">Project Overview</h2>
+            <div class="about-text" style="max-width: 800px; margin: 0 auto;">
+                <p>The Crave project encompasses several key components aimed at delivering a comprehensive AI-driven
+                    food recognition and recommendation system.</p>
 
-    </section>
+                <h3 style="margin-top: 30px; margin-bottom: 15px; color: var(--accent-primary);">AI & Recognition</h3>
+                <p>The core is an AI Image Recognition model capable of accurately identifying and categorizing food
+                    images. Trained on a diverse deep learning dataset, it classifies common meals and exotic dishes. We
+                    leverage Google Drive for scalable cloud storage of training assets.</p>
 
-    <style>
-    .model-img {
-        width: 1000px;  /* Set width to 300px */
-        height: 700px;  /* Maintain aspect ratio */
-        margin: 10px;  /* Add some space between images */
-    }</style>
-    
-    <section id="media">
-        <h2>Project Media</h2>
-        <div class="media-gallery">
-            <img src="CraveAI-screenshot1.png" alt="Screenshot 1" class="model-img">
-            <img src="CraveAI-screenshot2.png" alt="Screenshot 2" class="model-img">
-            <img src="CraveAI-screenshot3.png" alt="Screenshot 3" class="model-img">
-        </div>
-    </section>
+                <h3 style="margin-top: 30px; margin-bottom: 15px; color: var(--accent-primary);">Web Application</h3>
+                <p>Built with Streamlit, the front-end offers a seamless user experience. Users upload food images to
+                    receive instant predictions. The system also features a taste-based recommendation engine, analyzing
+                    user preferences to suggest personalized meals.</p>
 
-    <section id="demo">
-        <h2>Live Demo</h2>
-        <p>Check out the live demo of CraveAI by clicking the link below:</p>
-        <a href="https://sutcrave.streamlit.app/" target="_blank" class="demo-link">View Live Demo</a>
-    </section>
+                <h3 style="margin-top: 30px; margin-bottom: 15px; color: var(--accent-primary);">Global Reach</h3>
+                <p>We emphasize open-source contribution and internationalization, ensuring the platform is accessible
+                    to non-English speakers and adaptable to diverse cultural needs.</p>
+            </div>
+        </section>
+
+        <!-- Technologies -->
+        <section id="technologies">
+            <h2 style="text-align: center;">Tech Stack</h2>
+            <div class="project-card" style="padding: 40px; text-align: center; max-width: 900px; margin: 0 auto;">
+                <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
+                    <span class="project-tag">Streamlit</span>
+                    <span class="project-tag">TensorFlow</span>
+                    <span class="project-tag">NumPy</span>
+                    <span class="project-tag">Matplotlib</span>
+                    <span class="project-tag">OpenCV</span>
+                    <span class="project-tag">Pillow</span>
+                    <span class="project-tag">Pandas</span>
+                    <span class="project-tag">Google Colab</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Media -->
+        <section id="media">
+            <h2 style="text-align: center;">App Screenshots</h2>
+            <div class="masonry-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+                <div class="project-card overlay-container">
+                    <img src="CraveAI-screenshot1.png" alt="CraveAI Dashboard" style="width: 100%; display: block;">
+                </div>
+                <div class="project-card overlay-container">
+                    <img src="CraveAI-screenshot2.png" alt="Recognition Demo" style="width: 100%; display: block;">
+                </div>
+                <div class="project-card overlay-container">
+                    <img src="CraveAI-screenshot3.png" alt="Recommendations" style="width: 100%; display: block;">
+                </div>
+            </div>
+        </section>
+
+        <!-- Demo CTA -->
+        <section id="demo" class="cta-section" style="margin-top: 40px; border-radius: 24px;">
+            <div class="container">
+                <h2>Try it yourself</h2>
+                <p>Experience the power of AI food recognition.</p>
+                <a href="https://sutcrave.streamlit.app/" target="_blank" class="btn btn-primary">
+                    Launch Application
+                </a>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2024 Kelvin Lee. All rights reserved.</p>
-        <br><a href="index.html" class="home-button">Back to Home page</a>
+        <div class="container">
+            <p>&copy; 2024 Kelvin Lee. All rights reserved.</p>
+            <div style="margin-top: 20px;">
+                <a href="index.html" class="btn btn-secondary">Back to Home</a>
+            </div>
+        </div>
     </footer>
 </body>
+
 </html>
